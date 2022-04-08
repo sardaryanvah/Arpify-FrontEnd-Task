@@ -1,4 +1,3 @@
-import { isLabelWithInternallyDisabledControl } from "@testing-library/user-event/dist/utils";
 import { useForm } from "react-hook-form";
 import "../App.css";
 
@@ -8,18 +7,17 @@ export const Second = () => {
   const onSubmit = async (data) => {
     const formData = new FormData();
     formData.append("photo", data.photo[0]);
-    formData.append("pdf", data.pdf[0]);
+    formData.append("pdfFile", data.pdf[0]);
     formData.append("firstName", data.firstName);
-    formData.append("lastName", data.lastname);
+    formData.append("lastName", data.lastName);
     formData.append("birthDay", data.birthDay);
     formData.append("gender", data.gender);
-    formData.append("photo", data.photo);
     const requestOptions = {
       method: "POST",
-      headers: {"Content-Type": "multipart/form-data"},
       body: formData,
     };
-    await fetch(url, requestOptions)
+    console.log(data, formData);
+    const res = await fetch(url, requestOptions)
     .then((res) => res.json())
   };
   return (

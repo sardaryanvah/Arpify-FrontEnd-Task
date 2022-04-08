@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { Second } from "./components/Pages";
-import { First } from "./components/Pages";
+import { Second } from "./components/Second";
+import { First } from "./components/First";
 
 function App() {
   return (
